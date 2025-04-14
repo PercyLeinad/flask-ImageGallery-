@@ -1,1 +1,1 @@
-Place Images here
+Place Thumbnails Images here
