@@ -8,5 +8,5 @@ COPY requirements.txt /usr/src/v1.1
 RUN pip3 install -r requirements.txt
 
 COPY . .
-EXPOSE 5000
-CMD [ "python3", "app.py"]
+EXPOSE 9000
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:9000", "--access-logfile", "-", "--error-logfile", "-"]
