@@ -1,1 +1,1 @@
-gunicorn app:app --bind 0.0.0.0:9000 --access-logfile - --error-logfile -
+gunicorn app:app --bind 0.0.0.0:8000 --access-logfile - --error-logfile -

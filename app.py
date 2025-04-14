@@ -7,9 +7,9 @@ app = Flask(__name__)
 IMAGE_DIR = os.path.join(os.path.dirname(__file__), 'static', 'data-src')
 ITEMS_PER_PAGE = 18  # Number of items per page
 
-def sorter(dir):
-    num = re.search(r'\d*',dir).group()
-    return int(num)
+def sorter(filename):
+    match = re.search(r'\d+', filename)
+    return int(match.group()) if match else 0
 
 def get_dtsrcimages():
     dtrc = [os.path.join('static', 'data-src', filename) for filename in sorted(os.listdir(IMAGE_DIR),key=sorter) 

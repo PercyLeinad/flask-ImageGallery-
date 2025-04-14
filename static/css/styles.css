@@ -74,7 +74,7 @@ h5{
 
 }
 .item{
-	grid-template-rows: subgrid;
+	grid-auto-rows: auto;
 	grid-row: span;
 	text-align: center;
 	

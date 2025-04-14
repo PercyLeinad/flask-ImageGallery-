@@ -1,12 +1,11 @@
+FROM python:3.13-alpine
 
-FROM python:3.9-slim-buster
+WORKDIR /usr/src/flask-ImageGallery
 
-WORKDIR /usr/src/v1.1
-
-COPY requirements.txt /usr/src/v1.1
+COPY requirements.txt /usr/src/flask-ImageGallery
 
 RUN pip3 install -r requirements.txt
 
 COPY . .
-EXPOSE 9000
-CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:9000", "--access-logfile", "-", "--error-logfile", "-"]
+EXPOSE 8000
+CMD ["gunicorn", "app:app", "--bind", "0.0.0.0:8000", "--access-logfile", "-", "--error-logfile", "-"]
